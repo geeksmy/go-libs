@@ -1,0 +1,74 @@
+linters-settings:
+  errcheck:
+    check-type-assertions: false
+    check-blank: false
+  govet:
+    check-shadowing: true
+  golint:
+    min-confidence: 0.8
+    exclude:
+      - ALL_CAPS
+  gocyclo:
+    min-complexity: 10
+  maligned:
+    suggest-new: true
+  goconst:
+    min-len: 3
+    min-occurrences: 3
+  #  misspell:
+  #    locale: US
+  lll:
+    line-length: 140
+  unparam:
+    check-exported: false
+  goimports:
+    local-prefixes: ylink
+  gocritic:
+    enabled-tags:
+      - performance
+      - style
+      - experimental
+    disabled-checks:
+      - commentedOutCode
+      - wrapperFunc
+      - paramTypeCombine
+      - elseif
+      - hugeParam
+#      - dupImport # https://github.com/go-critic/go-critic/issues/845
+
+run:
+  skip-dirs:
+    - design
+    - gen
+    - cmd/app
+  skip-files:
+    - ".*\\.mock\\.go$"
+  #  modules-download-mode: readonly
+  tests: true
+
+linters:
+  enable-all: false
+  fast: false
+  enable:
+    - deadcode
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - errorlint
+    # - wsl
+    - dogsled
+    - gofmt
+    - goimports
+    - lll
+    # - nestif
+    # - goconst
+
+issues:
+  exclude:
+    - "don't use ((underscores)|(ALL_CAPS)) in Go names;"
