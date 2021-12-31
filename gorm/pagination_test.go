@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"git.chinaopen.ai/yottacloud/go-libs/test_tool"
+	"github.com/geeksmy/go-libs/test_tool"
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/google/uuid"

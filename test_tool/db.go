@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	gormV2 "gorm.io/gorm"
 
-	gormutil "git.chinaopen.ai/yottacloud/go-libs/gormutil_v2"
+	gormutil "github.com/geeksmy/go-libs/gormutil_v2"
 )
 
 func MockedGORMV1DBForTest(t *testing.T, sqlDB *sql.DB) *gormV1.DB {

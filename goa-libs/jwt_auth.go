@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"git.chinaopen.ai/yottacloud/go-libs/jwt"
-	"git.chinaopen.ai/yottacloud/go-libs/util"
+	"github.com/geeksmy/go-libs/jwt"
+	"github.com/geeksmy/go-libs/util"
 	"goa.design/goa/v3/security"
 )
 

@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"git.chinaopen.ai/yottacloud/go-libs/jwt"
+	"github.com/geeksmy/go-libs/jwt"
 )
 
 func JwtSetup(t *testing.T, testJwtSecret string) {

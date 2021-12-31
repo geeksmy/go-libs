@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 
-	libsRedis "git.chinaopen.ai/yottacloud/go-libs/redis"
+	libsRedis "github.com/geeksmy/go-libs/redis"
 )
 
 func RedisCnnForTest(t *testing.T, envURIKey string) *redis.Client {

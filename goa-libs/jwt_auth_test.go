@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"git.chinaopen.ai/yottacloud/go-libs/jwt"
+	"github.com/geeksmy/go-libs/jwt"
 
 	"github.com/stretchr/testify/assert"
 	"goa.design/goa/v3/security"
