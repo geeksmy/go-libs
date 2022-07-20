@@ -1,7 +1,7 @@
 package gorm
 
 import (
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // PaginationScope 分页 Scope,

@@ -1,8 +1,6 @@
 package gorm
 
-import (
-	"github.com/jinzhu/gorm"
-)
+import "gorm.io/gorm"
 
 // Scope func(db *gorm.DB) *gorm.DB 的 type alias
 // example:

@@ -3,9 +3,9 @@ package gorm
 import (
 	"testing"
 
-	"github.com/jinzhu/gorm"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
+	"gorm.io/gorm"
 )
 
 func TestConnectWithDSN(t *testing.T) {

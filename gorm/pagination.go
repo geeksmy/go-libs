@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // Page 分页返回
 type Page struct {
-	TotalRecord int         `json:"total_record"`
+	TotalRecord int64       `json:"total_record"`
 	TotalPage   int         `json:"total_page"`
 	Records     interface{} `json:"records"`
 	Offset      int         `json:"offset"`
@@ -40,7 +40,7 @@ func Pagination(db *gorm.DB, limit, offset int, result interface{}) (*Page, erro
 
 	var (
 		page  = Page{}
-		count int
+		count int64
 	)
 
 	err := db.Model(result).Count(&count).Error
@@ -61,7 +61,7 @@ func Pagination(db *gorm.DB, limit, offset int, result interface{}) (*Page, erro
 	page.Limit = limit
 	page.TotalPage = int(math.Ceil(float64(count) / float64(limit)))
 
-	if count > limit+offset {
+	if count > int64(limit+offset) {
 		nextCursor := offset + limit
 		page.NextCursor = nextCursor
 	} else {
