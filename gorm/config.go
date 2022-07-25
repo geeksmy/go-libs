@@ -1,8 +1,6 @@
 package gorm
 
 import (
-	"time"
-
 	flag "github.com/spf13/pflag"
 	"github.com/spf13/viper"
 )
@@ -23,27 +21,6 @@ type Conf struct {
 	MaxIdleConns    int
 	MaxOpenConns    int
 	ConnMaxLifetime int
-}
-
-func (c Conf) ToOptions() []Option {
-	opts := make([]Option, 0, 8)
-	if c.LogMode {
-		opts = append(opts, LogModOpt(c.LogMode))
-	}
-
-	if c.MaxIdleConns > 0 {
-		opts = append(opts, SetMaxIdleConnsOpt(c.MaxIdleConns))
-	}
-
-	if c.MaxOpenConns > 0 {
-		opts = append(opts, SetMaxOpenConnsOpt(c.MaxOpenConns))
-	}
-
-	if c.ConnMaxLifetime > 0 {
-		opts = append(opts, SetConnMaxLifetimeOpt(time.Duration(c.ConnMaxLifetime)*time.Second))
-	}
-
-	return opts
 }
 
 var C = Conf{
