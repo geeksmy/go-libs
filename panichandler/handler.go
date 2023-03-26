@@ -26,7 +26,7 @@ func (h zapHandler) Handle() {
 }
 
 // ZapHandler 使用 zap 搜集 panic 信息
-// @param logger  logger == nil 会使用全局 Logger
+//  logger  logger == nil 会使用全局 Logger
 func ZapHandler(logger *zap.Logger) zapHandler {
 	if logger == nil {
 		logger = zap.L()

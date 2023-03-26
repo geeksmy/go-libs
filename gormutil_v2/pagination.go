@@ -20,10 +20,10 @@ type Page struct {
 var ErrPageParamError = fmt.Errorf("param 'result' err：%s", "unsupported destination, should be slice or struct")
 
 // Pagination 分页
-// @param db 数据库连接
-// @param limit 每页条数
-// @param offset 偏移量
-// @param result 需要查询的结果集
+//  db 数据库连接
+//  limit 每页条数
+//  offset 偏移量
+//  result 需要查询的结果集
 func Pagination(db *gorm.DB, limit, offset int, result interface{}) (*Page, error) {
 	// 如果每页条数<=0,则初始化为10条
 	if limit <= 0 {

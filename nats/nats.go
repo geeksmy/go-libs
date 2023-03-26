@@ -4,7 +4,6 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/nats-io/nats.go"
 	"go.uber.org/zap"
 )
 
@@ -34,10 +33,10 @@ func Init() (err error) {
 }
 
 // 初始化nats conn
-// @param host server地址，以逗号分隔
-// @param username 用户名
-// @param password 密码
-// @param clientNamePrefix 客户端名称前缀
+//  host server地址，以逗号分隔
+//  username 用户名
+//  password 密码
+//  clientNamePrefix 客户端名称前缀
 func newConnect(host, username, password, clientNamePrefix string) (err error) {
 	conn, err = nats.Connect(host, nats.UserInfo(username, password), nats.Name(clientNamePrefix),
 		nats.DisconnectErrHandler(OnDisconnection), nats.ReconnectHandler(OnReconnection))
@@ -50,8 +49,8 @@ func newConnect(host, username, password, clientNamePrefix string) (err error) {
 }
 
 // 订阅topic
-// @param topic 主题
-// @param callback 订阅回调
+//  topic 主题
+//  callback 订阅回调
 func Subscribe(topic string, callback nats.MsgHandler) error {
 	if conn == nil {
 		zap.L().Error("Nats must be initialized")
@@ -70,8 +69,8 @@ func Subscribe(topic string, callback nats.MsgHandler) error {
 }
 
 // 发布消息
-// @param topic 主题
-// @param data 消息内容
+//  topic 主题
+//  data 消息内容
 func Publish(topic string, data []byte) error {
 	if conn == nil {
 		zap.L().Error("Nats must be initialized")

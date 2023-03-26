@@ -32,7 +32,7 @@ var C = Conf{
 }
 
 // BindDatabaseFlags 绑定 database viper.BingPFlag 的 key 增加绑定前缀
-// @param keyPrefix key 前缀
+//  keyPrefix key 前缀
 // example:
 // # config
 // type Config struct {
